@@ -223,3 +223,4 @@ btnSkills.addEventListener('click', () => {
 new VenoBox({
 	selector: '.venobox',
 });
+
