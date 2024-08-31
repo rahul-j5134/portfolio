@@ -224,3 +224,22 @@ new VenoBox({
 	selector: '.venobox',
 });
 
+// Form
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Message sent successfully!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message.');
+    });
+});
